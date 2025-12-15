@@ -1,60 +1,56 @@
-# 📊 Modelo Predictivo de Cumplimiento de Pago de Tarjetas de Crédito
+# 📡 Predicción de Cancelación de Clientes (Churn) en Telecomunicaciones
 
 ## 📌 Contexto
-Este proyecto desarrolla un modelo predictivo para determinar la probabilidad de incumplimiento de pago de tarjetas de crédito de clientes de un banco en Taiwán, utilizando técnicas de Minería de Datos y Machine Learning. El objetivo es apoyar la gestión del riesgo crediticio y la toma de decisiones del negocio.
+Este proyecto desarrolla un modelo predictivo para identificar clientes con alta probabilidad de cancelar los servicios de la empresa de telecomunicaciones **Interconnect**. La cancelación de clientes representa un impacto directo en los ingresos, por lo que anticipar este comportamiento permite diseñar estrategias de retención más efectivas.
+
+El análisis se realizó integrando múltiples fuentes de datos relacionadas con contratos, información personal y servicios de internet y telefonía.
 
 ---
 
 ## 🧠 Enfoque Analítico
-El proyecto se desarrolló siguiendo la metodología CRISP-DM, cubriendo todo el ciclo analítico:
-- Entendimiento del negocio y de los datos  
-- Preparación y preprocesamiento del dataset  
-- Modelado, evaluación y selección del mejor modelo  
-- Propuesta de uso en un entorno real  
-
-Se trabajó con un dataset desbalanceado, aplicando técnicas específicas para mejorar la calidad predictiva.
+Se construyó un pipeline de análisis de datos que incluyó limpieza, integración de múltiples fuentes y modelado predictivo. El objetivo fue identificar patrones de comportamiento asociados al churn y evaluar distintos modelos de clasificación para seleccionar el más adecuado según métricas de desempeño.
 
 ---
 
 ## 🛠️ Herramientas y Técnicas
-- Lenguaje: R  
+- Lenguaje: Python  
+- Manipulación de datos: Pandas, NumPy  
+- Visualización: Matplotlib, Seaborn  
 - Preprocesamiento:
-  - Imputación de valores faltantes (KNN)  
-  - Selección de variables (Boruta)  
-  - Estandarización y creación de variables dummy  
-  - Balanceo de clases con SMOTE  
+  - Limpieza y unificación de múltiples datasets  
+  - Codificación de variables categóricas  
+  - Escalado de variables  
 - Modelos evaluados:
-  - Regresión Logística  
-  - K-Nearest Neighbors (KNN)  
-  - Naive Bayes  
-  - Support Vector Machine (SVM)  
-  - Árboles de decisión C5.0  
-  - Stacking (C5.0 + SVM + KNN con CART)  
-- Evaluación:
-  - Sensibilidad  
-  - Accuracy Balanceado  
+  - Logistic Regression  
+  - Random Forest  
+  - Gradient Boosting  
+- Optimización:
+  - Ajuste de hiperparámetros  
+- Métricas de evaluación:
+  - AUC-ROC  
+  - Accuracy  
 
 ---
 
 ## 📊 Resultados
-- Se compararon múltiples modelos con y sin umbral óptimo.  
-- El mejor desempeño se obtuvo con:
-  - Regresión Logística con umbral óptimo  
-  - Accuracy balanceado ≈ 69.2%  
-- El modelo logra un equilibrio adecuado entre sensibilidad y precisión, evitando underfitting y overfitting.
+- El modelo final seleccionado fue **Gradient Boosting**, optimizado mediante ajuste de hiperparámetros.  
+- Desempeño del modelo:
+  - **AUC-ROC: 0.8695**  
+  - **Accuracy: 82.11%**  
+- Se identificó que los clientes con contratos mensuales, pagos manuales y sin servicios adicionales presentan mayor probabilidad de cancelar.
 
 ---
 
 ## 🚀 Aplicación al Negocio
 El modelo permite:
-- Identificar clientes con mayor riesgo de incumplimiento.  
-- Apoyar estrategias de prevención temprana, ajustes de condiciones de pago o personalización de productos.  
-- Mejorar la gestión del riesgo y la experiencia del cliente.
+- Identificar de forma anticipada a clientes con alto riesgo de cancelación.  
+- Apoyar estrategias de retención mediante ofertas personalizadas, descuentos o mejoras de servicio.  
+- Priorizar acciones comerciales basadas en datos para reducir el churn.  
 
 ---
 
 ## 📚 Aprendizajes Clave
-- Aplicación práctica de Machine Learning en riesgo crediticio.  
-- Importancia del balanceo de datos y la selección de métricas adecuadas.  
-- Comparación crítica de modelos y trade-offs entre métricas.  
-- Uso de metodologías estructuradas para proyectos de Data Science.
+- Integración de múltiples fuentes de datos en un proyecto de Data Science.  
+- Importancia de la selección de métricas adecuadas para problemas de clasificación.  
+- Evaluación comparativa de modelos de Machine Learning.  
+- Interpretación de resultados para generar recomendaciones de negocio accionables.
